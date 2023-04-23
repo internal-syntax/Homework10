@@ -33,12 +33,16 @@ public class Main {
         System.out.println("Задача 2");
         int[] ledger = generateRandomArray();
         System.out.println(Arrays.toString(ledger));
-        int maximumSpending = 0;
-        int minimumWaste = -1;
+        int maximumSpending = Integer.MIN_VALUE;
+        int minimumWaste = Integer.MAX_VALUE;
         for (int i = 0; i < ledger.length; i++) {
             if (ledger[i] > maximumSpending) {
                 maximumSpending = ledger[i];
-            } else minimumWaste = ledger[i];
+            }
+            if (ledger[i] < minimumWaste) {
+                ;
+                minimumWaste = ledger[i];
+            }
         }
         System.out.println("Минимальная сумма трат за день составила " + minimumWaste + " рублей. Максимальная сумма трат за день составила " + maximumSpending + " рублей");
     }
